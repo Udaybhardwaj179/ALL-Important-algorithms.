@@ -1,0 +1,52 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+     int n;
+    cin>>n;
+    int maxi=0;
+    int draw=0;
+    vector <int> v;
+  
+    
+    while (n--){
+       
+        int a;
+        cin>>a;
+        v.push_back(a);
+    }
+    
+    int n1 =v.size();
+  
+    int e=0;
+    
+    for (int i=0;i<n1;i++){
+        int c=0;
+        for (int j=0;j<n1;j++){
+            
+            if (v[i]==v[j]){
+                
+                c++;
+            }
+        }
+          if (c > maxi) { 
+            maxi = c; 
+            e = v[i]; 
+        }
+        
+        
+        if ( c==maxi ){
+            if ( e!=v[i] ){
+                 draw++;
+            }
+        }  
+    }
+    if (draw!=0  )cout<<"No majority candidate found";
+    else cout<<e;
+    return 0;
+}
